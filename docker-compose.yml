@@ -1,0 +1,27 @@
+# docker-compose.yml
+
+version: '3'
+
+services:
+  # db:
+  #   image: postgres
+  #   environment:
+  #     POSTGRES_DB: social_network
+  #     POSTGRES_USER: admin
+  #     POSTGRES_PASSWORD: admin
+
+  web:
+    build: .
+    command: ["sh", "-c", "python manage.py migrate && gunicorn social_network.wsgi:application --bind 0.0.0.0:8000"]
+    volumes:
+      - .:/app
+    ports:
+      - "8000:8000"
+    # depends_on:
+    #   - db
+    environment:
+      # DATABASE_URL: postgres://user:password@db:5432/social_network
+
+
+    # SQLite does not require any DATABASE_URL environment variable
+

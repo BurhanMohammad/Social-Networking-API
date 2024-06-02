@@ -1,0 +1,304 @@
+{
+	"info": {
+		"_postman_id": "f5ec8504-ddf8-4ef7-a251-052e30691bbb",
+		"name": "Api for social networking application",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "28546968"
+	},
+	"item": [
+		{
+			"name": "http://127.0.0.1:8000/signup/",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"email\": \"mail@example.com\", \"password\": \"admin\", \"first_name\": \"burhan\", \"last_name\": \"mohammad\"}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/signup/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"signup",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://127.0.0.1:8000/login/",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Cookie",
+						"value": "csrftoken=WBhnbG5HSKdQhz7NojLD8rBPAGRKH2gh; sessionid=3790h09ekma6s1q0b8wzt4z8f8sq1nrh",
+						"type": "text"
+					},
+					{
+						"key": "X-CSRFToken",
+						"value": "WBhnbG5HSKdQhz7NojLD8rBPAGRKH2gh",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"email\": \"6@example.com\", \"password\": \"admin\"}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/login/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"login",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://127.0.0.1:8000/search_users/?q=3",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Cookie",
+						"value": "csrftoken=WBhnbG5HSKdQhz7NojLD8rBPAGRKH2gh; sessionid=3790h09ekma6s1q0b8wzt4z8f8sq1nrh",
+						"type": "text"
+					},
+					{
+						"key": "X-CSRFToken",
+						"value": "WBhnbG5HSKdQhz7NojLD8rBPAGRKH2gh",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://127.0.0.1:8000/search_users/?q=ma",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"search_users",
+						""
+					],
+					"query": [
+						{
+							"key": "q",
+							"value": "ma"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://127.0.0.1:8000/send_friend_request/",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Cookie",
+						"value": "csrftoken=MmmWczVL9Etm3knITbc8WU5YbQhWcR0Z; sessionid=xbtgi6kwxv4vsf5u1ddsja4uh8api5yk",
+						"type": "text"
+					},
+					{
+						"key": "X-CSRFToken",
+						"value": "MmmWczVL9Etm3knITbc8WU5YbQhWcR0Z",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"to_user_id\": 5}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/send_friend_request/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"send_friend_request",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://127.0.0.1:8000/list_pending_requests/",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Cookie",
+						"value": "csrftoken=MmmWczVL9Etm3knITbc8WU5YbQhWcR0Z; sessionid=xbtgi6kwxv4vsf5u1ddsja4uh8api5yk",
+						"type": "text"
+					},
+					{
+						"key": "X-CSRFToken",
+						"value": "MmmWczVL9Etm3knITbc8WU5YbQhWcR0Z",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/list_pending_requests/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"list_pending_requests",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://127.0.0.1:8000/respond_friend_request/4/",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Cookie",
+						"value": "csrftoken=CBL155q6Mg7lVEMwgfnucSL0sGy1xOHy; sessionid=p2gpcceyp1aotyzdicipfjolky8dzdg4",
+						"type": "text"
+					},
+					{
+						"key": "X-CSRFToken",
+						"value": "CBL155q6Mg7lVEMwgfnucSL0sGy1xOHy",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"action\": \"accept\"}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/respond_friend_request/3/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"respond_friend_request",
+						"3",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://127.0.0.1:8000/list_friends/",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Cookie",
+						"value": "csrftoken=CBL155q6Mg7lVEMwgfnucSL0sGy1xOHy; sessionid=p2gpcceyp1aotyzdicipfjolky8dzdg4",
+						"type": "text"
+					},
+					{
+						"key": "X-CSRFToken",
+						"value": "CBL155q6Mg7lVEMwgfnucSL0sGy1xOHy",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/list_friends/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"list_friends",
+						""
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
